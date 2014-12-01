@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Offices</h1>
+</div>
+
+<p><a href="/offices/new" class="btn btn-primary">Add a New Office</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Company</th>
+      <th>Industry</th>
+      <th>Group</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offices.each do |office| %>
+      <tr>
+        <td><%= office.city_id %></td>
+        <td><%= office.company_id %></td>
+        <td><%= office.industry_id %></td>
+        <td><%= office.group_id %></td>
+        <td>
+          <a href="/offices/<%= office.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/offices/<%= office.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_office/<%= office.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-
-
+#starter resource gen
+gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "boothappdev"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.rc1'
 # Use sqlite3 as the database for Active Record

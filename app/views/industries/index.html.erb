@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Industries</h1>
+</div>
+
+<p><a href="/industries/new" class="btn btn-primary">Add a New Industry</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @industries.each do |industry| %>
+      <tr>
+        <td><%= industry.name %></td>
+        <td>
+          <a href="/industries/<%= industry.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/industries/<%= industry.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_industry/<%= industry.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

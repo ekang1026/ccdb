@@ -1,4 +1,109 @@
 Rails.application.routes.draw do
+
+  # Routes for the Office resource:
+  # CREATE
+  get('/offices/new', { :controller => 'offices', :action => 'new' })
+  get('/create_office', { :controller => 'offices', :action => 'create' })
+
+  # READ
+  get('/offices', { :controller => 'offices', :action => 'index' })
+  get('/offices/:id', { :controller => 'offices', :action => 'show' })
+
+  # UPDATE
+  get('/offices/:id/edit', { :controller => 'offices', :action => 'edit' })
+  get('/update_office/:id', { :controller => 'offices', :action => 'update' })
+
+  # DELETE
+  get('/delete_office/:id', { :controller => 'offices', :action => 'destroy' })
+  #------------------------------
+
+  #Change index
+  root :to => 'reviews#index'
+  # Routes for the Group resource:
+  # CREATE
+  get('/groups/new', { :controller => 'groups', :action => 'new' })
+  get('/create_group', { :controller => 'groups', :action => 'create' })
+
+  # READ
+  get('/groups', { :controller => 'groups', :action => 'index' })
+  get('/groups/:id', { :controller => 'groups', :action => 'show' })
+
+  # UPDATE
+  get('/groups/:id/edit', { :controller => 'groups', :action => 'edit' })
+  get('/update_group/:id', { :controller => 'groups', :action => 'update' })
+
+  # DELETE
+  get('/delete_group/:id', { :controller => 'groups', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Industry resource:
+  # CREATE
+  get('/industries/new', { :controller => 'industries', :action => 'new' })
+  get('/create_industry', { :controller => 'industries', :action => 'create' })
+
+  # READ
+  get('/industries', { :controller => 'industries', :action => 'index' })
+  get('/industries/:id', { :controller => 'industries', :action => 'show' })
+
+  # UPDATE
+  get('/industries/:id/edit', { :controller => 'industries', :action => 'edit' })
+  get('/update_industry/:id', { :controller => 'industries', :action => 'update' })
+
+  # DELETE
+  get('/delete_industry/:id', { :controller => 'industries', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Company resource:
+  # CREATE
+  get('/companies/new', { :controller => 'companies', :action => 'new' })
+  get('/create_company', { :controller => 'companies', :action => 'create' })
+
+  # READ
+  get('/companies', { :controller => 'companies', :action => 'index' })
+  get('/companies/:id', { :controller => 'companies', :action => 'show' })
+
+  # UPDATE
+  get('/companies/:id/edit', { :controller => 'companies', :action => 'edit' })
+  get('/update_company/:id', { :controller => 'companies', :action => 'update' })
+
+  # DELETE
+  get('/delete_company/:id', { :controller => 'companies', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the City resource:
+  # CREATE
+  get('/cities/new', { :controller => 'cities', :action => 'new' })
+  get('/create_city', { :controller => 'cities', :action => 'create' })
+
+  # READ
+  get('/cities', { :controller => 'cities', :action => 'index' })
+  get('/cities/:id', { :controller => 'cities', :action => 'show' })
+
+  # UPDATE
+  get('/cities/:id/edit', { :controller => 'cities', :action => 'edit' })
+  get('/update_city/:id', { :controller => 'cities', :action => 'update' })
+
+  # DELETE
+  get('/delete_city/:id', { :controller => 'cities', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Review resource:
+  # CREATE
+  get('/reviews/new', { :controller => 'reviews', :action => 'new' })
+  get('/create_review', { :controller => 'reviews', :action => 'create' })
+
+  # READ
+  get('/reviews', { :controller => 'reviews', :action => 'index' })
+  get('/reviews/:id', { :controller => 'reviews', :action => 'show' })
+
+  # UPDATE
+  get('/reviews/:id/edit', { :controller => 'reviews', :action => 'edit' })
+  get('/update_review/:id', { :controller => 'reviews', :action => 'update' })
+
+  # DELETE
+  get('/delete_review/:id', { :controller => 'reviews', :action => 'destroy' })
+  #------------------------------
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
