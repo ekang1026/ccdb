@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # Routes for the Office resource:
   # CREATE
   get('/offices/new', { :controller => 'offices', :action => 'new' })
