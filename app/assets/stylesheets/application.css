@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/e/e8/20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop,_Lakeshore_East_and_Illinois_Center.jpg);
+    background-position: 0% 10%;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}

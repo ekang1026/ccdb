@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #------------------------------
 
   #Change index
-  root :to => 'reviews#index'
+  root :to => 'offices#index'
   # Routes for the Group resource:
   # CREATE
   get('/groups/new', { :controller => 'groups', :action => 'new' })
