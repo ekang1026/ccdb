@@ -15,6 +15,11 @@ class ReviewsController < ApplicationController
   def create
 
     @office = Office.new
+    @office.city_id = params[:city_id]
+    @office.company_id = params[:company_id]
+    @office.industry_id = params[:industry_id]
+    @office.group_id = params[:group_id]
+
 
     @review = Review.new
     @review.user_id = params[:user_id]
@@ -25,8 +30,8 @@ class ReviewsController < ApplicationController
     @review.review_get_internship = params[:review_get_internship]
     @review.review_rating = params[:review_rating]
 
-
     if @review.save
+      @office.save
       redirect_to "/offices", :notice => "Review created successfully."
     else
       render 'new'
