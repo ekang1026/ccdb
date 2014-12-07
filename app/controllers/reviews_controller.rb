@@ -5,6 +5,8 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+
+
   end
 
   def new
@@ -14,16 +16,22 @@ class ReviewsController < ApplicationController
 
   def create
 
-    @office = Office.new
-    @office.city_id = params[:city_id]
-    @office.company_id = params[:company_id]
-    @office.industry_id = params[:industry_id]
-    @office.group_id = params[:group_id]
+    existing_offices = Office.where(:city_id => params[:city_id], :company_id => params[:company_id], :industry_id => params[:industry_id])
 
+    if existing_offices.present?
+      @office = existing_offices[0]
+    else
+      @office = Office.new
+      @office.city_id = params[:city_id]
+      @office.company_id = params[:company_id]
+      @office.industry_id = params[:industry_id]
+      @office.group_id = params[:group_id]
+      @office.save
+    end
 
     @review = Review.new
     @review.user_id = params[:user_id]
-    @review.office_id = params[:office_id]
+    @review.office_id = @office.id
     @review.review_description = params[:review_description]
     @review.review_pros = params[:review_pros]
     @review.review_cons = params[:review_cons]
@@ -31,6 +39,9 @@ class ReviewsController < ApplicationController
     @review.review_rating = params[:review_rating]
 
     if @review.save
+
+
+
       @office.save
       redirect_to "/offices", :notice => "Review created successfully."
     else
