@@ -5,17 +5,11 @@ class Office < ActiveRecord::Base
 
   has_many :reviews
 
-  # has_one :city
-  # has_one :industry
-  # has_one :company
-  # has_one :group
+  belongs_to :city
+  belongs_to :industry
+  belongs_to :company
+  belongs_to :group
 
-
-# Necessary for offices index page
-belongs_to :city
-belongs_to :industry
-belongs_to :company
-belongs_to :group
 
 
 end

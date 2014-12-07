@@ -7,14 +7,14 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Office</th>
+<!--       <th>User</th>
+      <th>Office</th> -->
       <th>Review description</th>
       <th>Review pros</th>
       <th>Review cons</th>
       <th>Review get internship</th>
       <th>Review rating</th>
-      <th>Created at</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -23,28 +23,22 @@
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.user_id %></td>
-        <td><%= review.office_id %></td>
+<!--         <td><%= review.user_id %></td>
+        <td><%= review.office_id %></td> -->
         <td><%= review.review_description %></td>
         <td><%= review.review_pros %></td>
         <td><%= review.review_cons %></td>
         <td><%= review.review_get_internship %></td>
         <td><%= review.review_rating %></td>
-        <td><%= review.created_at %></td>
         <td>
           <a href="/reviews/<%= review.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
         </td>
-        <% if current_user.id = review.user.id %>
-
         <td>
-
           <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
-        <% else %>
-        <% end %>
         </td>
         <td>
           <a href="/delete_review/<%= review.id %>" class="btn btn-danger">
