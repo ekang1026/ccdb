@@ -1,18 +1,68 @@
 <div class="page-header">
-  <h1>Office #<%= @office.id %></h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+      <dd><h3><%= @office.company.name %></h3></dd>
+      </div>
+      <div class="col-sm-3">
+        <dd><h3><%= @office.city.name %></h3></dd>
+      </div>
+      <div class="col-sm-3">
+        <dd><h3><%= @office.group.name %></h3></dd>
+      </div>
+      <div class="col-sm-3">
+        <dd><h3><%= @office.industry.name %></h3></dd>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <dl class="dl-horizontal">
-  <dt>City</dt>
-  <dd><%= @office.city_id %></dd>
 
-  <dt>Company</dt>
-  <dd><%= @office.company_id %></dd>
 
-  <dt>Industry</dt>
-  <dd><%= @office.industry_id %></dd>
+  <dt>Reviews</dt>
 
-  <dt>Group</dt>
-  <dd><%= @office.group_id %></dd>
+  <!--   <%= debug(@office.reviews) %> -->
+  <dd>
+    <ul>
+      <% @office.reviews.each do |review| %>
+      <li>
+        <%= review.review_description %>
+      </li>
+      <li>
+        <%= review.review_pros %>
+      </li>
+      <li>
+        <%= review.review_cons %>
+      </li>
+      <li>
+        <%= review.review_get_internship %>
+      </li>
+      <li>
+        <%= review.review_rating %>
+      </li>
+      <% end %>
+    </ul>
+
+
+  </dd>
+
+
+
+</dd>
+
+
+
 
 </dl>
