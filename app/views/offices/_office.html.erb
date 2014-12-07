@@ -1,0 +1,19 @@
+<div class="office col-xs-6 col-sm-4 col-md-3 col-lg-2 item">
+  <div class="thumbnail">
+
+    <% if @offices.present? %>
+    <a href="/offices/<%= office.id %>">
+    <div class="lead" align="center">
+        <%= office.company.name %>
+        <%= office.city.name %>
+      </div>
+      <div class="caption" align="center">
+        (<%= office.group.name %>)
+        (<%= office.industry.name %>)
+      </div>
+    </a>
+    <% else %>
+
+    <% end %>
+  </div>
+</div>
