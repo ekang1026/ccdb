@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
-      <dd><h3><%= @office.company.name %></h3></dd>
+        <dd><h3><%= @office.company.name %></h3></dd>
       </div>
       <div class="col-sm-3">
         <dd><h3><%= @office.city.name %></h3></dd>
@@ -19,42 +19,26 @@
 
 </div>
 
-<dl class="dl-horizontal">
 
-
-  <dt>Reviews</dt>
-
-  <!--   <%= debug(@office.reviews) %> -->
-  <dd>
-    <ul>
-      <% @office.reviews.each do |review| %>
-      <li>
-        Description: <%= review.review_description %>
-      </li>
-      <li>
-        Pros: <%= review.review_pros %>
-      </li>
-      <li>
-        Cons: <%= review.review_cons %>
-      </li>
-      <li>
-        Recruiting Advice:<%= review.review_get_internship %>
-      </li>
-      <li>
-        Rating: <%= review.review_rating %>
-      </li>
-       <li>
-        Created On: <%= review.created_at.strftime("%b %d, %Y") %>
-      </li>
-      <% end %>
-    </ul>
-  </dd>
-
-
-
-</dd>
-
-
-
-
-</dl>
+<div class="row isotope-container">
+  <% @office.reviews.each do |review| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Reviewed on <%= review.created_at.strftime("%b %d, %Y") %></h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+          <dt>Description</dt>
+          <dd><%= review.review_description %></dd>
+          <dt>Pros</dt>
+          <dd><%= review.review_pros %></dd>
+          <dt>Cons</dt>
+          <dd><%= review.review_cons %></dd>
+          <dt>Rating</dt>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
