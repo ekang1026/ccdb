@@ -17,15 +17,6 @@
 
   </div>
 
-
-
-
-
-
-
-
-
-
 </div>
 
 <dl class="dl-horizontal">
@@ -38,24 +29,25 @@
     <ul>
       <% @office.reviews.each do |review| %>
       <li>
-        <%= review.review_description %>
+        Description: <%= review.review_description %>
       </li>
       <li>
-        <%= review.review_pros %>
+        Pros: <%= review.review_pros %>
       </li>
       <li>
-        <%= review.review_cons %>
+        Cons: <%= review.review_cons %>
       </li>
       <li>
-        <%= review.review_get_internship %>
+        Recruiting Advice:<%= review.review_get_internship %>
       </li>
       <li>
-        <%= review.review_rating %>
+        Rating: <%= review.review_rating %>
+      </li>
+       <li>
+        Created On: <%= review.created_at.strftime("%b %d, %Y") %>
       </li>
       <% end %>
     </ul>
-
-
   </dd>
 
 
