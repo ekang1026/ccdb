@@ -8,13 +8,13 @@ gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.g
 gem 'rails', '4.2.0.rc1'
 
 # Use sqlite3 as the database for Active Record--> Changed to pg
-group :development do
-  gem ’sqlite3’
+
+group :devlopment, :test do
+  gem 'sqlite3'
 end
 
 group :production do
   gem 'pg'
-  gem ‘rails_12factor
 end
 
 # Use SCSS for stylesheets
