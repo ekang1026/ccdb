@@ -32,11 +32,14 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @review.user_id = params[:user_id]
     @review.office_id = @office.id
-    @review.review_description = params[:review_description]
-    @review.review_pros = params[:review_pros]
-    @review.review_cons = params[:review_cons]
-    @review.review_get_internship = params[:review_get_internship]
-    @review.review_rating = params[:review_rating]
+    @review.group = params[:group]
+    @review.satisfaction = params[:satisfaction]
+    @review.experience = params[:experience]
+    @review.tips = params[:tips]
+    @review.compensation = params[:compensation]
+    @review.hours = params[:hours]
+    @review.culture = params[:culture]
+    @review.exit_ops = params[:exit_ops]
 
     if @review.save
 

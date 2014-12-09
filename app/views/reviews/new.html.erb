@@ -8,108 +8,90 @@
 <% end %>
 <% end %>
 
-<div class="page-header">
-  <h1>Add a Review</h1>
+<div class="page-header" align="center">
+  <h1>Thanks for contributing to coffeechat db!</h1>
 </div>
+<form action="/create_review" class="form-horizontal">
+  <div class="panel panel-danger">
+    <div class="panel-heading" align="center">
+      <h3 class="panel-title"><p> <h4>I worked at <%=  select_tag(:company_id, options_from_collection_for_select(Company.order(:name), :id, :name)) %> in<%=  select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name)) %> in <%=  select_tag(:industry_id, options_from_collection_for_select(Industry.order(:name), :id, :name)) %></h4> </p>
+    </div>
+    <div class="panel-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" >
+            <label for="group">
+              Were you in a particular group or position?
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <label for="compensation">
+              What is the approximate expected post-MBA 1st year compensation?
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="group" name="group" placeholder="i.e. M&A/Operations/Healthcare/ if NA leave blank" class="form-control" rows="1"><%= @review.group %></textarea>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="compensation" name="compensation" placeholder="Please enter an integer (no commas please!)" class="form-control" rows="1"><%= @review.compensation %></textarea>
+          </div>
+          <!-- ____ -->
+          <div class="col-md-6" >
+            <label for="satisfied">
+              How satisfied were you with the experience (1-10)
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <label for="hours">
+              How many hours did you work in a typical weak
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="satisfaction" name="satisfaction" placeholder="1...10" class="form-control" rows="1"><%= @review.satisfaction %></textarea>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="hours" name="hours" placeholder="85" class="form-control" rows="1"><%= @review.hours %></textarea>
+          </div>
+          <!-- ____ -->
 
-<div class="row">
-  <div class="col-md-12">
-    <form action="/create_review" class="form-horizontal">
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-<!--         <label for="user_id" class="col-sm-2 control-label">
-          User
-        </label> -->
-        <div class="col-sm-10">
-          <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
+          <div class="col-md-6" >
+            <label for="compensation">
+              What was your summer experience like?
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <label for="culture">
+              What was the office culture like?
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="experience" name="experience" placeholder="What did you do... pros/cons... types of projects" class="form-control" rows="3"><%= @review.experience %></textarea>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="culture" name="culture" placeholder="Happy hours every Friday... work till 2am every night..." class="form-control" rows="3"><%= @review.culture %></textarea>
+          </div>
+          <div class="col-md-6" >
+            <label for="tips">
+              What are some tips to recruiting successfully?
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <label for="exit_ops">
+              Where do people typically exit?
+            </label>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="tips" name="tips" placeholder="Make a case for the West Coast...don't miss a meet and greet" class="form-control" rows="3"><%= @review.tips %></textarea>
+          </div>
+          <div class="col-md-6" >
+            <textarea id="exit_ops" name="exit_ops" placeholder="General Management/Corporate/Private Equity/ if NA leave blank" class="form-control" rows="3"><%= @review.exit_ops %></textarea>
+          </div>
+          <div class="col-xs-12" align="center">
+            <input type="submit" value="Create Review" class="btn btn-primary">
+            <input type="hidden" id="user_id" name="user_id"  value="<%= current_user.id %>">
+          </div>
         </div>
-      </div>
-
-      <!-- Label and input for office_id -->
-<!--       <div class="form-group">
-        <label for="office_id" class="col-sm-2 control-label">
-          Office
-        </label>
-        <div class="col-sm-10">
-          <input type="text" id="office_id" name="office_id" placeholder="Office" class="form-control" value="<%= @review.office_id %>">
-        </div>
-      </div>
-    -->
-    <!-- Label and input for review_description -->
-
-    <div class="container">
-      <div class="row" align="center">
-        <div class="col-sm-3">
-          <%=  select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name)) %>
-        </div>
-        <div class="col-sm-3">
-          <%=  select_tag(:industry_id, options_from_collection_for_select(Industry.order(:name), :id, :name)) %>
-        </div>
-        <div class="col-sm-3">
-          <%=  select_tag(:company_id, options_from_collection_for_select(Company.order(:name), :id, :name)) %>
-
-        </div>
-
+        <div class="row"></div>
       </div>
     </div>
-
-    <div class="form-group">
-      <label for="review_description" class="col-sm-2 control-label">
-        What was your summer experience like?
-      </label>
-      <div class="col-sm-10">
-        <textarea id="review_description" name="review_description" placeholder="Over the summer I worked on ... My hours were generally ...  The office culture was ...." class="form-control" rows="3"><%= @review.review_description %></textarea>
-      </div>
-    </div>
-
-    <!-- Label and input for review_pros -->
-    <div class="form-group">
-      <label for="review_pros" class="col-sm-2 control-label">
-        What were the positive aspects of the summer?
-      </label>
-      <div class="col-sm-10">
-        <textarea id="review_pros" name="review_pros" placeholder="The positive aspects of the summer were ..." class="form-control" rows="3"><%= @review.review_pros %></textarea>
-      </div>
-    </div>
-
-    <!-- Label and input for review_cons -->
-    <div class="form-group">
-      <label for="review_cons" class="col-sm-2 control-label">
-        What were the negative aspects of the summer?
-      </label>
-      <div class="col-sm-10">
-        <textarea id="review_cons" name="review_cons" placeholder="The negative aspects of the summer were..." class="form-control" rows="3"><%= @review.review_cons %></textarea>
-      </div>
-    </div>
-
-    <!-- Label and input for review_get_internship -->
-    <div class="form-group">
-      <label for="review_get_internship" class="col-sm-2 control-label">
-        What are some tips to getting an internship?
-      </label>
-      <div class="col-sm-10">
-        <textarea id="review_get_internship" name="review_get_internship" placeholder="In order to get an internship you should..." class="form-control" rows="3"><%= @review.review_get_internship %></textarea>
-      </div>
-    </div>
-
-    <!-- Label and input for review_rating -->
-    <div class="form-group">
-      <label for="review_rating" class="col-sm-2 control-label">
-        How would you rate the internship from 1-10?
-      </label>
-
-
-      <div class="col-sm-10">
-        <input type="text" id="review_rating" name="review_rating" placeholder="Review rating" class="form-control" value="<%= @review.review_rating %>">
-      </div>
-    </div>
-
-    <div class="form-group" ">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="submit" value="Create Review" class="btn btn-primary">
-      </div>
-    </div>
-  </form>
-</div>
-</div>
-
+  </div>

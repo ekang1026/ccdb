@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201190725) do
+ActiveRecord::Schema.define(version: 20141209074456) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -49,13 +49,16 @@ ActiveRecord::Schema.define(version: 20141201190725) do
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
     t.integer  "office_id"
-    t.text     "review_description"
-    t.text     "review_pros"
-    t.text     "review_cons"
-    t.text     "review_get_internship"
-    t.float    "review_rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "satisfaction"
+    t.string   "group"
+    t.text     "tips"
+    t.text     "experience"
+    t.text     "culture"
+    t.integer  "compensation"
+    t.string   "exit_ops"
+    t.integer  "hours"
   end
 
   create_table "users", force: true do |t|

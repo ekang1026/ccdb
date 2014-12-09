@@ -8,50 +8,43 @@
   <thead>
     <tr>
       <th>User</th>
-      <th>Office</th>
-      <th>Review description</th>
-      <th>Review pros</th>
-      <th>Review cons</th>
-      <th>Review get internship</th>
-      <th>Review rating</th>
-      <th>Created at</th>
-      <th></th>
-      <th></th>
+      <th>Company</th>
+      <th>City</th>
+      <th>Industry</th>
+      <th>Created @</th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @reviews.each do |review| %>
-      <tr>
-        <td><%= review.user_id %></td>
-        <td><%= review.office_id %></td>
-        <td><%= review.review_description %></td>
-        <td><%= review.review_pros %></td>
-        <td><%= review.review_cons %></td>
-        <td><%= review.review_get_internship %></td>
-        <td><%= review.review_rating %></td>
-        <td><%= review.created_at %></td>
-        <td>
-          <a href="/reviews/<%= review.id %>" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
-        </td>
-        <% if current_user.id = review.user.id %>
+    <tr>
+      <td><%= review.user.email %></td>
+      <td><%= review.office.company.name %></td>
+      <td><%= review.office.city.name %></td>
+      <td><%= review.office.industry.name %></td>
+      <td><%= review.created_at %></td>
+      <td>
+        <a href="/reviews/<%= review.id %>" class="btn btn-primary">
+          <i class="fa fa-search-plus"></i>
+        </a>
+      </td>
+      <% if current_user.id = review.user.id %>
 
-        <td>
+      <td>
 
-          <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
+        <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
+          <i class="fa fa-edit"></i>
+        </a>
         <% else %>
         <% end %>
-        </td>
-        <td>
-          <a href="/delete_review/<%= review.id %>" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </td>
-      </tr>
+      </td>
+      <td>
+        <a href="/delete_review/<%= review.id %>" class="btn btn-danger">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
