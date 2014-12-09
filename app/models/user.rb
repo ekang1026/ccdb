@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   def email_validator
     if self.email.include? "chicagobooth.edu"
     else
-      self.errors.add(:email, "Sorry you must use a Chicago Booth email!")
+      self.errors.add(:email, "Sorry you must use a @chicagobooth email!")
     end
   end
 
