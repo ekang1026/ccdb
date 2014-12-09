@@ -1,51 +1,43 @@
 <div class="page-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <dd><h3><%= @office.company.name %></h3></dd>
-      </div>
-      <div class="col-sm-3">
-        <dd><h3><%= @office.city.name %></h3></dd>
-      </div>
 
-      <div class="col-sm-3">
-        <dd><h3><%= @office.industry.name %></h3></dd>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <h3 align="center">Reviews on <%= @office.company.name %> in <%= @office.city.name %> in <%= @office.industry.name %>
+        </h3>
       </div>
     </div>
 
-  </div>
 
-</div>
-
-
-<div class="row isotope-container">
-  <% @office.reviews.each do |review| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Reviewed on <%= review.created_at.strftime("%b %d, %Y") %></h3>
+      <div class="row isotope-container">
+        <% @office.reviews.each do |review| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Reviewed on <%= review.created_at.strftime("%b %d, %Y") %></h3>
+            </div>
+            <div class="panel-body">
+              <dl>
+                <dt>Group</dt>
+                <dd><%= review.group %></dd>
+                <dt>Salary</dt>
+                <dd><%= review.compensation %></dd>
+                <dt>Satisfaction (out of 10)</dt>
+                <dd><%= review.satisfaction %></dd>
+                <dt>Hours</dt>
+                <dd><%= review.hours %></dd>
+                <dt>Cxperience</dt>
+                <dd><%= review.experience %></dd>
+                <dt>Culture</dt>
+                <dd><%= review.culture %></dd>
+                <dt>Recruiting Tips</dt>
+                <dd><%= review.tips %></dd>
+                <dt>Exit Opportunities</dt>
+                <dd><%= review.exit_ops %></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
-      <div class="panel-body">
-        <dl>
-          <dt>Group</dt>
-          <dd><%= review.group %></dd>
-          <dt>Salary</dt>
-          <dd><%= review.compensation %></dd>
-          <dt>Satisfaction (out of 10)</dt>
-          <dd><%= review.satisfaction %></dd>
-          <dt>Hours</dt>
-          <dd><%= review.hours %></dd>
-          <dt>Cxperience</dt>
-          <dd><%= review.experience %></dd>
-          <dt>Culture</dt>
-          <dd><%= review.culture %></dd>
-          <dt>Recruiting Tips</dt>
-          <dd><%= review.tips %></dd>
-          <dt>Exit Opportunities</dt>
-          <dd><%= review.exit_ops %></dd>
-        </dl>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
