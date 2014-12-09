@@ -15,7 +15,7 @@
  */
  .jumbotron {
     margin-bottom: 0px;
-    background-image: url("assets/images/WG2.jpg");
+    background-image: url("/assets/images/WG2.jpg");
     background-position: 40% 60%;
     background-size: cover;
     background-repeat: no-repeat;
