@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+
   validate :email_validator
 
   has_many :reviews
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
   def email_validator
     if self.email.include? "chicagobooth.edu"
     else
-      self.errors.add(:email, "Sorry you must use a @chicagobooth email!")
+      self.errors.add(:email, "Sorry Coffeechat DB is currently only available with a a @chicagobooth email!")
     end
   end
 
