@@ -76,15 +76,7 @@ config.i18n.fallbacks = true
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   # Emailer
-  config.action_mailer.default_url_options = {:host => 'gmail.com'}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => 'smtp.gmail.com',
-    :port    => 587,
-    :domain  => 'gmail.com'
 
-
-  }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
    :tls => true,
