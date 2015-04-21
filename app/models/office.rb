@@ -1,5 +1,5 @@
 class Office < ActiveRecord::Base
-  validates :city, :presence => true
+
   validates :industry, :presence => true
   validates :company, :presence => true
 
@@ -15,7 +15,7 @@ class Office < ActiveRecord::Base
 belongs_to :city
 belongs_to :industry
 belongs_to :company
-
+belongs_to :group
 
 
 end
