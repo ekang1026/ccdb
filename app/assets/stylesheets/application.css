@@ -14,8 +14,8 @@
  *= require_self
  */
  .jumbotron {
+    background-image: url(http://i1216.photobucket.com/albums/dd370/kjames1581/jtronnew.jpg);
     margin-bottom: 0px;
-    background-image:url(/assets/WG2.JPG);
     background-position: 40% 60%;
     background-size: cover;
     background-repeat: no-repeat;
