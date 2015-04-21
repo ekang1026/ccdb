@@ -7,15 +7,6 @@ gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.g
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.rc1'
 
-# Use sqlite3 as the database for Active Record--> Changed to pg
-
-
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,6 +36,9 @@ gem 'binding_of_caller'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -53,6 +47,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
