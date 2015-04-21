@@ -15,11 +15,13 @@
  */
  .jumbotron {
     margin-bottom: 0px;
-    background-image: url(WG2.JPG);
+    background-image: url(/assets/WG2.JPG);
+
     background-position: 40% 60%;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 600px;
+    
 }
 
 
