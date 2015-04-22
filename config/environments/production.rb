@@ -85,14 +85,13 @@ config.i18n.fallbacks = true
   config.active_record.dump_schema_after_migration = false
   # Emailer
 
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-   :tls => true,
-   :address => "smtp.gmail.com",
-   :port => 587,
-   :domain => "gmail.com",
-   :authentication => :login,
-   :user_name => "coffeechatdb@gmail.com",
-   :password => "whsyrdddy"
- }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'fast-shore-2965.herokuapp.com/', #eg: 'yourappname.herokuapp.com'
+    :authentication => :plain,
+  }
 end
