@@ -51,7 +51,7 @@ Rails.application.configure do
   authentication: :plain,
   enable_starttls_auto: true,
   user_name: 'coffeechatdb@gmail.com',
-  password: 'whsyrdddy'
+  password: 'axddygxekpaufpug'
   }
-  
+
 end
