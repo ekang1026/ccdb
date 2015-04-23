@@ -81,6 +81,10 @@ config.i18n.fallbacks = true
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
@@ -88,12 +92,13 @@ config.i18n.fallbacks = true
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-
-    user_name:            'coffeechatdb',
-    password:             'whsyrdddy',
-    authentication:       'plain',
-    enable_starttls_auto: true  }
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "gmail.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
   
 end
