@@ -101,7 +101,7 @@ config.i18n.fallbacks = true
       :port => 587,
       :authentication => :plain,
       :domain => 'gmail.com',
-      :user_name => 'coffeechatdb@gmail.com',
+      :user_name => 'coffeechatdb',
       :password => 'whsyrdddy',
       :enable_starttls_auto => false
    }
