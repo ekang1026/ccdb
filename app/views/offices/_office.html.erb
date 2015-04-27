@@ -8,8 +8,8 @@
         <%= office.city.name %>
       </div>
       <div class="caption" align="center">
-
-        (<%= office.industry.name %>)
+        <a href="/delete_office/<%= office.id %>" class="btn btn-danger">
+           (<%= office.industry.name %>)
       </div>
     </a>
     <% else %>
