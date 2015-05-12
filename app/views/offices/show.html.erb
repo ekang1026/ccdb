@@ -4,7 +4,7 @@
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <h3 align="center">Reviews on <%= @office.company.name %> in <%= @office.city.name %> in <%= @office.industry.name %>
+        <h3 align="center">Reviews on <%= @office.company.name %> in <%= @office.industry.name %> in <%= @office.city.name %> 
         </h3>
       </div>
     </div>
@@ -45,10 +45,24 @@
                 <dd><%= review.diversity %></dd>
                 <dt>Offer Rate</dt>
                 <dd><%= review.offer %></dd>
-                
               </dl>
-            </div>
-          </div>
-        </div>
+              <ul>
+                <% review.comments.each do |comment| %>
+                <li>
+                  <p><%= comment.content %> by <%= comment.user_id.email %></p>
+                  <p><%= time_ago_in_words(comment.created_at) %> ago</p>
+                </li>
+                <% end %>
+              </ul>            
+              <form action="/create_comment">
+                <input type="text" placeholder="content" name="content" class="form-control">
+
+                <input type="hidden" placeholder="user_id" name="user_id" class="form-control" value="<%= current_user.id %>">
+
+                <input type="hidden" placeholder="review_id" name="review_id" class="form-control" value="<%= review.id %>">
+      
+                <input type="submit">
+              </form>
+  
         <% end %>
       </div>

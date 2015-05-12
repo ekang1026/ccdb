@@ -36,6 +36,22 @@ Rails.application.routes.draw do
   # DELETE
   get('/delete_group/:id', { :controller => 'groups', :action => 'destroy' })
   #------------------------------
+    # Routes for the Comment resource:
+  # CREATE
+  get('/comments/new', { :controller => 'comments', :action => 'new' })
+  get('/create_comment', { :controller => 'comments', :action => 'create' })
+
+  # READ
+  get('/comments', { :controller => 'comments', :action => 'index' })
+  get('/comments/:id', { :controller => 'comments', :action => 'show' })
+
+  # UPDATE
+  get('/comments/:id/edit', { :controller => 'comments', :action => 'edit' })
+  get('/update_comment/:id', { :controller => 'comments', :action => 'update' })
+
+  # DELETE
+  get('/delete_comment/:id', { :controller => 'comments', :action => 'destroy' })
+  #------------------------------
 
   # Routes for the Industry resource:
   # CREATE

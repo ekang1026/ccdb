@@ -1,47 +1,52 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html
-
   def index
     @comments = Comment.all
-    respond_with(@comments)
   end
 
   def show
-    respond_with(@comment)
+    @comment = Comment.find(params[:id])
   end
 
   def new
     @comment = Comment.new
-    respond_with(@comment)
-  end
-
-  def edit
   end
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.save
-    respond_with(@comment)
+    @comment = Comment.new
+    @comment.content = params[:content]
+    @comment.user_id = params[:user_id]
+    @comment.review_id = params[:review_id]
+
+    if @comment.save
+      redirect_to root_url, :notice => "Comment created successfully."
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
   end
 
   def update
-    @comment.update(comment_params)
-    respond_with(@comment)
+    @comment = Comment.find(params[:id])
+
+    @comment.content = params[:content]
+    @comment.user_id = params[:user_id]
+    @comment.review_id = params[:review_id]
+
+    if @comment.save
+      redirect_to "/comments", :notice => "Comment updated successfully."
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+
     @comment.destroy
-    respond_with(@comment)
+
+    redirect_to "/comments", :notice => "Comment deleted."
   end
-
-  private
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
-
-    def comment_params
-      params.require(:comment).permit(:content, :user_id, :review_id)
-    end
 end
