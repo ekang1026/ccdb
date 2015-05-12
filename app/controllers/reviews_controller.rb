@@ -32,18 +32,22 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @review.user_id = params[:user_id]
     @review.office_id = @office.id
-    @review.group = params[:group]
-    @review.satisfaction = params[:satisfaction]
-    @review.experience = params[:experience]
-    @review.tips = params[:tips]
-    @review.compensation = params[:compensation]
+    
     @review.hours = params[:hours]
+    @review.group = params[:group]
+    @review.tips = params[:tips]
     @review.culture = params[:culture]
+    @review.compensation = params[:compensation]
     @review.exit_ops = params[:exit_ops]
+    @review.responsibility = params[:responsibility]    
+    @review.development = params[:development]
+    @review.outlook = params[:outlook]
+    @review.benefit = params[:benefit]
+    @review.international = params[:international]
+    @review.diversity = params[:diversity]
+    @review.offer = params[:offer]
 
     if @review.save
-
-
 
       @office.save
       redirect_to "/offices", :notice => "Review created successfully."
@@ -60,12 +64,21 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     @review.user_id = params[:user_id]
-    @review.office_id = params[:office_id]
-    @review.review_description = params[:review_description]
-    @review.review_pros = params[:review_pros]
-    @review.review_cons = params[:review_cons]
-    @review.review_get_internship = params[:review_get_internship]
-    @review.review_rating = params[:review_rating]
+    @review.office_id = @office.id
+    
+    @review.hours = params[:hours]
+    @review.group = params[:group]
+    @review.tips = params[:tips]
+    @review.culture = params[:culture]
+    @review.compensation = params[:compensation]
+    @review.exit_ops = params[:exit_ops]
+    @review.responsibility = params[:responsibility]    
+    @review.development = params[:development]
+    @review.outlook = params[:outlook]
+    @review.benefit = params[:benefit]
+    @review.international = params[:international]
+    @review.diversity = params[:diversity]
+    @review.offer = params[:offer]
 
     if @review.save
       redirect_to "/reviews", :notice => "Review updated successfully."

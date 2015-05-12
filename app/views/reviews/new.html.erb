@@ -18,74 +18,162 @@
     </div>
     <div class="panel-body">
       <div class="container">
+        
         <div class="row">
-          <div class="col-md-5" align="center">
-            <label for="group">
-              Were you in a particular group or position?
+          <div class="col-md-6" align="center">
+            <label for="responsibility">
+            How would you describe your roles and responsibilities on the day to day? *
             </label>
           </div>
           <div class="col-md-5" align="center">
-            <label for="compensation">
-              What is the approximate expected post-MBA 1st year compensation?
-            </label>
+            <textarea id="responsibility" name="responsibility" placeholder="Responsibilities" class="form-control" rows="1"><%= @review.responsibility %></textarea>
           </div>
-          <div class="col-md-5" align="center">
-            <textarea id="group" name="group" placeholder="i.e. M&A/Operations/Healthcare/ if NA leave blank" class="form-control" rows="1"><%= @review.group %></textarea>
-          </div>
-          <div class="col-md-5" >
-            <textarea id="compensation" name="compensation" placeholder="Please enter an integer (no commas please!)" class="form-control" rows="1"><%= @review.compensation %></textarea>
-          </div>
-          <!-- ____ -->
-          <div class="col-md-5" >
-            <label for="satisfied">
-              How satisfied were you with the experience (1-10)
-            </label>
-          </div>
-          <div class="col-md-5" >
-            <label for="hours">
-              How many hours did you work in a typical weak
-            </label>
-          </div>
-          <div class="col-md-5" >
-            <textarea id="satisfaction" name="satisfaction" placeholder="1...10" class="form-control" rows="1"><%= @review.satisfaction %></textarea>
-          </div>
-          <div class="col-md-5" >
-            <textarea id="hours" name="hours" placeholder="85" class="form-control" rows="1"><%= @review.hours %></textarea>
-          </div>
-          <!-- ____ -->
-
-          <div class="col-md-5" >
-            <label for="compensation">
-              What was your summer experience like?
-            </label>
-          </div>
-          <div class="col-md-5" >
+          
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
             <label for="culture">
-              What was the office culture like?
+            How would you describe the firm culture? Who are the types of people that don't do well here? *
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="experience" name="experience" placeholder="What did you do... pros/cons... types of projects" class="form-control" rows="3"><%= @review.experience %></textarea>
+            <textarea id="culture" name="culture" placeholder="Culture" class="form-control" rows="1"><%= @review.culture %></textarea>
+          </div>
+        
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="compensation">
+              * What would you approximate as the 1st year all in compensation averaging in all bonuses? *
+            </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="culture" name="culture" placeholder="Happy hours every Friday... work till 2am every night..." class="form-control" rows="3"><%= @review.culture %></textarea>
+            <textarea id="compensation" name="compensation" placeholder="100000" class="form-control" rows="1"><%= @review.compensation %></textarea>
+          </div>
+
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="hours">
+              How many hours did you work a week? *
+            </label>
           </div>
           <div class="col-md-5" >
+            <textarea id="hours" name="hours" placeholder="60" class="form-control" rows="1"><%= @review.hours %></textarea>
+          </div>
+  
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="development">
+              Please speak your mind about your thoughts on career development at the firm. *
+            </label>
+          </div>
+          <div class="col-md-5" >
+            <textarea id="development" name="development" placeholder="60" class="form-control" rows="1"><%= @review.development %></textarea>
+          </div>
+        
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
             <label for="tips">
-              What are some tips to recruiting successfully?
+              Do you have any advice on the recruiting process? *
             </label>
           </div>
           <div class="col-md-5" >
+            <textarea id="tips" name="tips" placeholder="60" class="form-control" rows="1"><%= @review.tips %></textarea>
+          </div>
+          
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="outlook">
+              Please speak to your opinion on the outlook of the firm
+            </label>
+          </div>
+          <div class="col-md-5" >
+            <textarea id="outlook" name="outlook" placeholder="60" class="form-control" rows="1"><%= @review.outlook %></textarea>
+          </div>
+          
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
             <label for="exit_ops">
-              Where do people typically exit?
+              Do you have any advice on the recruiting process?
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="tips" name="tips" placeholder="Make a case for the West Coast...don't miss a meet and greet" class="form-control" rows="3"><%= @review.tips %></textarea>
+            <textarea id="exit_ops" name="exit_ops" placeholder="60" class="form-control" rows="1"><%= @review.exit_ops %></textarea>
+          </div>
+          
+          </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="benefit">
+            Please describe some of the benefits 401k matching, tuition payment, great healthcare package
+            </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="exit_ops" name="exit_ops" placeholder="General Management/Corporate/Private Equity/ if NA leave blank" class="form-control" rows="3"><%= @review.exit_ops %></textarea>
+            <textarea id="benefit" name="benefit" placeholder="60" class="form-control" rows="1"><%= @review.benefit %></textarea>
           </div>
+          
+         </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="diversity">
+            Do you feel strongly that the firm promotes diversity as far as minority advancement / female advancement?
+            </label>
+          </div>
+          <div class="col-md-5" >
+            <textarea id="diversity" name="diversity" placeholder="60" class="form-control" rows="1"><%= @review.diversity %></textarea>
+          </div>  
+
+         </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="offer">
+            How common is it to receive a return offer from an internship?
+            </label>
+          </div>
+          <div class="col-md-5" >
+            <textarea id="offer" name="offer" placeholder="60" class="form-control" rows="1"><%= @review.offer %></textarea>
+          </div>  
+  
+           </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="group">
+            Where you in a particular group or focus on a particular sub-industry.
+            </label>
+          </div>
+          <div class="col-md-5" >
+            <textarea id="group" name="group" placeholder="60" class="form-control" rows="1"><%= @review.group %></textarea>
+          </div>  
+          
+           </br></br></br>
+          
+          <div class="col-md-6" align="center">
+            <label for="international">
+            Do they sponsor international applicants?
+            </label>
+          </div>
+          <div class="col-md-5" >
+            <textarea id="international" name="international" placeholder="60" class="form-control" rows="1"><%= @review.international %></textarea>
+          </div>  
+
+      
+        </div>
+        
+          
+
+          
+          
+          
+          
+          
+          
+          
+
           <div class="col-xs-12" align="center">
             <input type="submit" value="Create Review" class="btn btn-primary">
             <input type="hidden" id="user_id" name="user_id"  value="<%= current_user.id %>">
