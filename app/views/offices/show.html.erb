@@ -15,7 +15,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 isotope-item">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Reviewed on <%= review.created_at.strftime("%b %d, %Y") %></h3>
+              <h3 class="panel-title">Reviewed on <%= review.created_at.strftime("%b %d, %Y")    %> <i class="fa fa-plus-square-o" > </h3></i>
             </div>
             <div class="panel-body">
               <dl>
@@ -53,16 +53,18 @@
                   <p><%= time_ago_in_words(comment.created_at) %> ago</p>
                 </li>
                 <% end %>
-              </ul>            
-              <form action="/create_comment">
-                <input type="text" placeholder="content" name="content" class="form-control">
-
-                <input type="hidden" placeholder="user_id" name="user_id" class="form-control" value="<%= current_user.id %>">
-
-                <input type="hidden" placeholder="review_id" name="review_id" class="form-control" value="<%= review.id %>">
-      
-                <input type="submit">
-              </form>
+              </ul>
+              <div class="form-group">
+                <form action="/create_comment">
   
+                    <input type="text" placeholder="Comments" name="content" class="form-control">
+    
+                    <input type="hidden" placeholder="user_id" name="user_id" class="form-control" value="<%= current_user.id %>">
+    
+                    <input type="hidden" placeholder="review_id" name="review_id" class="form-control" value="<%= review.id %>">
+                    </br>
+                    <input type="submit" >
+                </form>
+              </div>  
         <% end %>
       </div>

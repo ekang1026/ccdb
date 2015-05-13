@@ -12,9 +12,9 @@
   <h1>Thanks for contributing to the Coffee Chat DB Community!</h1>
 </div>
 <form action="/create_review" class="form-horizontal">
-  <div class="panel panel-primary">
+  <div class="panel panel-primary" font-color="black">
     <div class="panel-heading" align="center">
-      <h3 class="panel-title"><p> <h4>I worked at <%=  select_tag(:company_id, options_from_collection_for_select(Company.order(:name), :id, :name)) %> in<%=  select_tag(:industry_id, options_from_collection_for_select(Industry.order(:name), :id, :name)) %> in <%=  select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name)) %> </h4> </p>
+      <h3 class="panel-title"><h4 font-color="black">I worked at <%=  select_tag(:company_id, options_from_collection_for_select(Company.order(:name), :id, :name)) %> in<%=  select_tag(:industry_id, options_from_collection_for_select(Industry.order(:name), :id, :name)) %> in <%=  select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name)) %> </h4>
     </div>
     <div class="panel-body">
       <div class="container">
@@ -26,7 +26,7 @@
             </label>
           </div>
           <div class="col-md-5" align="center">
-            <textarea id="responsibility" name="responsibility" placeholder="Responsibilities" class="form-control" rows="1"><%= @review.responsibility %></textarea>
+            <textarea id="responsibility" name="responsibility" placeholder="Managed a team a 3 analysts" class="form-control" rows="1"><%= @review.responsibility %></textarea>
           </div>
           
           </br></br></br>
@@ -37,7 +37,7 @@
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="culture" name="culture" placeholder="Culture" class="form-control" rows="1"><%= @review.culture %></textarea>
+            <textarea id="culture" name="culture" placeholder="Very flat organization where everyone goes out for beers after work" class="form-control" rows="1"><%= @review.culture %></textarea>
           </div>
         
           </br></br></br>
@@ -70,7 +70,7 @@
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="development" name="development" placeholder="60" class="form-control" rows="1"><%= @review.development %></textarea>
+            <textarea id="development" name="development" placeholder="Mentorship is very structured and most get promoted with peers annually" class="form-control" rows="1"><%= @review.development %></textarea>
           </div>
         
           </br></br></br>
@@ -81,18 +81,18 @@
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="tips" name="tips" placeholder="60" class="form-control" rows="1"><%= @review.tips %></textarea>
+            <textarea id="tips" name="tips" placeholder="Definitely need to be referred" class="form-control" rows="1"><%= @review.tips %></textarea>
           </div>
           
           </br></br></br>
           
           <div class="col-md-6" align="center">
             <label for="outlook">
-              Please speak to your opinion on the outlook of the firm
+              Please speak to your opinion on the outlook of the firm.
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="outlook" name="outlook" placeholder="60" class="form-control" rows="1"><%= @review.outlook %></textarea>
+            <textarea id="outlook" name="outlook" placeholder="I think it's an up and coming firm that will do well in the next 5 years" class="form-control" rows="1"><%= @review.outlook %></textarea>
           </div>
           
           </br></br></br>
@@ -103,18 +103,18 @@
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="exit_ops" name="exit_ops" placeholder="60" class="form-control" rows="1"><%= @review.exit_ops %></textarea>
+            <textarea id="exit_ops" name="exit_ops" placeholder="People mainly transfer to their clients in the first 3 years post MBA" class="form-control" rows="1"><%= @review.exit_ops %></textarea>
           </div>
           
           </br></br></br>
           
           <div class="col-md-6" align="center">
             <label for="benefit">
-            Please describe some of the benefits 401k matching, tuition payment, great healthcare package
+            Please describe some of the benefits.
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="benefit" name="benefit" placeholder="60" class="form-control" rows="1"><%= @review.benefit %></textarea>
+            <textarea id="benefit" name="benefit" placeholder="Great 401k matching" class="form-control" rows="1"><%= @review.benefit %></textarea>
           </div>
           
          </br></br></br>
