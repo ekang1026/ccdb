@@ -14,13 +14,5 @@
  *= require_self
  */
  
- 
- .jumbotron {
-    margin-bottom: 0px;
-    background-position: 40% 60%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-}
 
 
