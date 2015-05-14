@@ -50,8 +50,8 @@ Rails.application.configure do
   domain: "gmail.com",
   authentication: :plain,
   enable_starttls_auto: true,
-  user_name: 'coffeechatdb@gmail.com',
-  password: 'axddygxekpaufpug'
+  user_name: ENV['user_name'],
+  password: ENV['password']
   }
 
 end

@@ -8,11 +8,9 @@
         </h3>
       </div>
     </div>
-
-
       <div class="row isotope-container">
         <% @office.reviews.each do |review| %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 isotope-item">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 isotope-item">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Reviewed on <%= review.created_at.strftime("%b %d, %Y")    %> <i class="fa fa-plus-square-o" > </h3></i>
