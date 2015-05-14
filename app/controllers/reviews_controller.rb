@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   
   before_filter :authenticate
   
-  
+  def index 
     @reviews = Review.all
   end
 
