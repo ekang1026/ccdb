@@ -1,4 +1,7 @@
 class CitiesController < ApplicationController
+  
+  before_filter :authenticate
+  
   def index
     @cities = City.all
   end

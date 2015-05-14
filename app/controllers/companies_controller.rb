@@ -1,4 +1,7 @@
 class CompaniesController < ApplicationController
+  
+  before_filter :authenticate
+
   def index
     @companies = Company.all
   end

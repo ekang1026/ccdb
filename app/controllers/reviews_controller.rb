@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
-  def index
+  
+  before_filter :authenticate
+  
+  
     @reviews = Review.all
   end
 

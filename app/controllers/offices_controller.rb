@@ -1,4 +1,8 @@
 class OfficesController < ApplicationController
+ 
+  before_filter :authenticate, :except => [:index, :show]
+
+  
   def index
     @offices = Office.all
   end

@@ -1,4 +1,8 @@
 class IndustriesController < ApplicationController
+  
+  before_filter :authenticate
+
+
   def index
     @industries = Industry.all
   end

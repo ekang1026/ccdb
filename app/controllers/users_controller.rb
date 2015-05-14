@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  
+
+  before_filter :authenticate
+
   def index
     @users = User.all
   end
@@ -14,4 +18,6 @@ class UsersController < ApplicationController
 
     redirect_to "/users", :notice => "User  deleted."
   end
+  
+  
 end
