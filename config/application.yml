@@ -1,2 +1,3 @@
-user_name: 'coffeechatdb@gmail.com'
-password: 'axddygxekpaufpug'
+production:
+  user_name: 'coffeechatdb@gmail.com'
+  password: 'axddygxekpaufpug'
