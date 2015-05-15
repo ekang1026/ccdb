@@ -1,7 +1,6 @@
 class OfficesController < ApplicationController
  
-  before_filter :authenticate
-
+  before_filter :authenticate, :except => [:index, :show, :new]
   
   def index
     @offices = Office.all
