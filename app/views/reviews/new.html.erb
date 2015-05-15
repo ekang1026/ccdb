@@ -155,15 +155,6 @@
 
          </br></br></br>
           
-          <!--<div class="col-md-6" align="center">-->
-          <!--  <label for="offer">-->
-          <!--  How common is it to receive a return offer from an internship?-->
-          <!--  </label>-->
-          <!--</div>-->
-          <!--<div class="col-md-5" >-->
-          <!--  <textarea id="offer" name="offer" placeholder="" class="form-control" rows="1"><%= @review.offer %></textarea>-->
-          <!--</div>-->
-          
           <div class="col-md-6" align="center">
             <label for="offer">
             How common is it to receive a return offer from an internship? *
@@ -184,53 +175,64 @@
                 <option value=1>100%</option>                
                 <%= @review.offer %>
               </select>
-          </div>           
-  
-           </br></br></br>
-          
-          <div class="col-md-6" align="center">
+          </div>   
+               </br></br></br>
+
+            <div class="col-md-6" align="center">
             <label for="group">
             Where you in a particular group or focus on a particular sub-industry.
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="group" name="group" placeholder="" class="form-control" rows="1"><%= @review.group %></textarea>
-          </div>  
+              <select id="group" name="group" placeholder="" class="form-control">
+                <option value="No, I was a generalist">No, I was a generalist</option>
+                <option value="Brand Management">Brand Management</option>
+                <option value="Business Development">Business Development</option>
+                <option value="Consumer Retail">Consumer Retail</option>
+                <option value="Debt">Debt</option>
+                <option value="Early Stage">Early Stage</option>
+                <option value="Equity">Equity</option>
+                <option value="Finance">Finance</option>
+                <option value="Financial Institutions Group">Financial Institutions Group</option>     
+                <option value="Financial Sponsors">Financial Sponsors</option>                
+                <option value="Growth Equity">Growth Equity</option>     
+                <option value="Healthcare">Healthcare</option>                
+                <option value="Industrials">Industrials</option>     
+                <option value="Leveraged Finance">Leveraged Finance</option>                
+                <option value="Logistics">Logistics</option>           
+                <option value="Mergers and Acquisitions">Mergers and Acquisitions</option>     
+                <option value="Natural Resources">Natural Resources</option>                
+                <option value="Operations">Operations</option>   
+                <option value="Power and Energy">Power and Energy</option>     
+                <option value="Product Management">Product Management</option>                
+                <option value="Real Estate">Real Estate</option>     
+                <option value="Sales">Sales</option>     
+                <option value="Strategy">Strategy</option>                
+                <option value="Tech Media Telecom">Tech Media Telecom</option>   
+                <%= @review.group %>
+              </select>
+          </div>   
           
            </br></br></br>
-          
-          <!--<div class="col-md-6" align="center">-->
-          <!--  <label for="international">-->
-          <!--  Do they sponsor international applicants?-->
-          <!--  </label>-->
-          <!--</div>-->
-          <!--<div class="col-md-5" >-->
-          <!--  <textarea id="international" name="international" placeholder="" class="form-control" rows="1"><%= @review.international %></textarea>-->
-          <!--</div>  -->
-          
-          <!--</br></br></br>-->
 
           <div class="col-md-6" align="center">
-            <label for="international">
+            <label for="intl">
             Do they sponsor international applicants? *
             </label>
           </div>
           <div class="col-md-5" >
-              <select id="international" name="international" placeholder="" class="form-control">
-                <option value=1>Yes</option>
-                <option value=0>No</option>
-                <%= @review.international %>
+              <select id="intl" name="intl" placeholder="" class="form-control">
+                <option value="I'm not sure">I'm not sure</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <%= @review.intl %>
               </select>
           </div>  
 
-
-
-      
         </div>
         
        </br>
           
-
           <div class="col-xs-12" align="center">
             <input type="submit" value="Create Review" class="btn btn-primary">
             <input type="hidden" id="user_id" name="user_id"  value="<%= current_user.id %>">

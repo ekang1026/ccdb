@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514203111) do
+ActiveRecord::Schema.define(version: 20150515231230) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -69,9 +69,9 @@ ActiveRecord::Schema.define(version: 20150514203111) do
     t.text     "development"
     t.text     "outlook"
     t.text     "benefit"
-    t.boolean  "international"
     t.text     "diversity"
     t.float    "offer"
+    t.string   "intl"
   end
 
   create_table "users", force: true do |t|

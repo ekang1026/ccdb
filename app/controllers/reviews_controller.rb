@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
     @review.development = params[:development]
     @review.outlook = params[:outlook]
     @review.benefit = params[:benefit]
-    @review.international = params[:international]
+    @review.intl = params[:intl]
     @review.diversity = params[:diversity]
     @review.offer = params[:offer]
 
@@ -77,7 +77,7 @@ class ReviewsController < ApplicationController
     @review.development = params[:development]
     @review.outlook = params[:outlook]
     @review.benefit = params[:benefit]
-    @review.international = params[:international]
+    @review.intl = params[:intl]
     @review.diversity = params[:diversity]
     @review.offer = params[:offer]
 
