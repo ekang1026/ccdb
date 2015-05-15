@@ -33,7 +33,7 @@
           
           <div class="col-md-6" align="center">
             <label for="culture">
-            How would you describe the firm culture? Who are the types of people that don't do well here? *
+            How would you describe the firm culture? What types don't do well here? *
             </label>
           </div>
           <div class="col-md-5" >
@@ -44,23 +44,48 @@
           
           <div class="col-md-6" align="center">
             <label for="compensation">
-              What is the 1st year post-MBA all in compensation averaging in all bonuses? *
+            What is the 1st year post-MBA all in compensation averaging in all bonuses? *
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="compensation" name="compensation" placeholder="" class="form-control" rows="1"><%= @review.compensation %></textarea>
-          </div>
+              <select id="compensation" name="compensation" placeholder="" class="form-control">
+                <option value=80000>80,000</option>
+                <option value=100000>100,000</option>
+                <option value=120000>120,000</option>
+                <option value=140000>140,000</option>
+                <option value=160000>160,000</option>
+                <option value=180000>180,000</option>
+                <option value=200000>200,000</option>
+                <option value=220000>220,000</option>
+                <option value=240000>240,000</option>
+                <option value=260000>260,000</option>
+                <option value=280000>280,000</option>
+                <option value=300000>300,000</option>
+                <%= @review.compensation %>
+              </select>
+          </div> 
 
           </br></br></br>
           
           <div class="col-md-6" align="center">
             <label for="hours">
-              How many hours did you work a week? *
+            How many hours do you work in a typical week? *
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="hours" name="hours" placeholder="" class="form-control" rows="1"><%= @review.hours %></textarea>
-          </div>
+              <select id="hours" name="hours" placeholder="" class="form-control">
+                <option value=40>40</option>
+                <option value=50>50</option>
+                <option value=60>60</option>
+                <option value=70>70</option>
+                <option value=70>80</option>
+                <option value=70>90</option>
+                <option value=70>100</option>
+                <option value=70>110</option>
+                <option value=70>120</option>                
+                <%= @review.hours %>
+              </select>
+          </div> 
   
           </br></br></br>
           
@@ -121,7 +146,7 @@
           
           <div class="col-md-6" align="center">
             <label for="diversity">
-            Do you feel strongly that the firm promotes diversity as far as minority advancement / female advancement?
+            Do you feel that the firm promotes diversity for minorities and women?
             </label>
           </div>
           <div class="col-md-5" >
@@ -130,14 +155,36 @@
 
          </br></br></br>
           
+          <!--<div class="col-md-6" align="center">-->
+          <!--  <label for="offer">-->
+          <!--  How common is it to receive a return offer from an internship?-->
+          <!--  </label>-->
+          <!--</div>-->
+          <!--<div class="col-md-5" >-->
+          <!--  <textarea id="offer" name="offer" placeholder="" class="form-control" rows="1"><%= @review.offer %></textarea>-->
+          <!--</div>-->
+          
           <div class="col-md-6" align="center">
             <label for="offer">
-            How common is it to receive a return offer from an internship?
+            How common is it to receive a return offer from an internship? *
             </label>
           </div>
           <div class="col-md-5" >
-            <textarea id="offer" name="offer" placeholder="" class="form-control" rows="1"><%= @review.offer %></textarea>
-          </div>  
+              <select id="offer" name="offer" placeholder="" class="form-control">
+                <option value=0>0%</option>
+                <option value=.1>10%</option>
+                <option value=.2>20%</option>
+                <option value=.3>30%</option>
+                <option value=.4>40%</option>
+                <option value=.5>50%</option>
+                <option value=.6>60%</option>
+                <option value=.7>70%</option>
+                <option value=.8>80%</option>     
+                <option value=.9>90%</option>                
+                <option value=1>100%</option>                
+                <%= @review.offer %>
+              </select>
+          </div>           
   
            </br></br></br>
           
@@ -151,6 +198,32 @@
           </div>  
           
            </br></br></br>
+          
+          <!--<div class="col-md-6" align="center">-->
+          <!--  <label for="international">-->
+          <!--  Do they sponsor international applicants?-->
+          <!--  </label>-->
+          <!--</div>-->
+          <!--<div class="col-md-5" >-->
+          <!--  <textarea id="international" name="international" placeholder="" class="form-control" rows="1"><%= @review.international %></textarea>-->
+          <!--</div>  -->
+          
+          <!--</br></br></br>-->
+
+          <div class="col-md-6" align="center">
+            <label for="international">
+            Do they sponsor international applicants? *
+            </label>
+          </div>
+          <div class="col-md-5" >
+              <select id="international" name="international" placeholder="" class="form-control">
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+                <%= @review.international %>
+              </select>
+          </div>  
+
+
 
       
         </div>
