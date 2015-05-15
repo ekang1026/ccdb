@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:index, :show, :new]
   
   def index 
     @reviews = Review.all
@@ -8,8 +8,6 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
-
-
   end
 
   def new

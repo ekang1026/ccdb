@@ -1,6 +1,6 @@
 class OfficesController < ApplicationController
  
-  before_filter :authenticate, :except => [:index, :show]
+  before_filter :authenticate, :except => [:index, :show, :new, :create]
 
   
   def index
