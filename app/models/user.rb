@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   def email_validator
     if self.email.include? "chicagobooth.edu"
     else
-      self.errors.add(:email, "Sorry Coffeechat DB is currently only available with a a @chicagobooth email!")
+      self.errors.add(:email, "Sorry Coffeechat DB is currently only available with an a @chicagobooth.edu email!")
     end
   end
 
