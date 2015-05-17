@@ -610,5 +610,3 @@ groups_hashes.each do |group_hash|
   group.name = group_hash[:name]
   group.save
 end
-
-puts "There are now #{Industry.count} cities in the database."
