@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   
-  before_filter :authenticate, :except => [ :new]
+  before_filter :authenticate, :except => [ :new, :create]
   
   def index 
     @reviews = Review.all
