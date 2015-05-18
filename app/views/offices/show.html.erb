@@ -44,25 +44,9 @@
                 <dt>What is the typical internship offer rate?</dt>
                 <dd><%= review.offer %></dd>
               </dl>
-              <!--<ul>-->
-              <!--  <% review.comments.each do |comment| %>-->
-              <!--  <li>-->
-              <!--    <p><%= comment.content %> by <%= comment.user_id.email %></p>-->
-              <!--    <p><%= time_ago_in_words(comment.created_at) %> ago</p>-->
-              <!--  </li>-->
-              <!--  <% end %>-->
-              <!--</ul>-->
-              <!--<div class="form-group">-->
-              <!--  <form action="/create_comment">-->
-  
-              <!--      <input type="text" placeholder="Comments" name="content" class="form-control">-->
-    
-              <!--      <input type="hidden" placeholder="user_id" name="user_id" class="form-control" value="<%= current_user.id %>">-->
-    
-              <!--      <input type="hidden" placeholder="review_id" name="review_id" class="form-control" value="<%= review.id %>">-->
-              <!--      </br>-->
-              <!--      <input type="submit" >-->
-              <!--  </form>-->
-              <!--</div>  -->
-        <% end %>
+          </div>
+        </div>
       </div>
+      <% end %>
+    </div>
+  </div>
