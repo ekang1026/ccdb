@@ -11,7 +11,10 @@
 <div class="page-header" align="center">
   <h1>Thanks for contributing to the Coffee Chat DB Community!</h1>
 </div>
-<form action="/create_review" class="form-horizontal">
+
+<form action="/reviews" class="new_review" id="new_review" method="post">
+  
+  <input name="authenticity_token" type="hidden" value=<%= form_authenticity_token %> />
   <div class="panel panel-primary" font-color="black">
     <div class="panel-heading" align="center">
       <h3 class="panel-title"><h4 font-color="black">I worked at <%=  select_tag(:company_id, options_from_collection_for_select(Company.order(:name), :id, :name), class:'mypanel-dropdown') %> in<%=  select_tag(:industry_id, options_from_collection_for_select(Industry.order(:name), :id, :name), class:'mypanel-dropdown') %> in <%=  select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name), class:'mypanel-dropdown') %> </h4>

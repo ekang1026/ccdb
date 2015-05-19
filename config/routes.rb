@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  
+
+  
+  
+  
+  
   # Routes for the Office resource:
   # CREATE
   get('/offices/new', { :controller => 'offices', :action => 'new' })
@@ -104,21 +110,23 @@ Rails.application.routes.draw do
   get('/delete_city/:id', { :controller => 'cities', :action => 'destroy' })
   #------------------------------
 
+
+  resources :reviews
   # Routes for the Review resource:
   # CREATE
-  get('/reviews/new', { :controller => 'reviews', :action => 'new' })
-  get('/create_review', { :controller => 'reviews', :action => 'create' })
+  # get('/reviews/new', { :controller => 'reviews', :action => 'new' })
+  # get('/create_review', { :controller => 'reviews', :action => 'create' })
 
-  # READ
-  get('/reviews', { :controller => 'reviews', :action => 'index' })
-  get('/reviews/:id', { :controller => 'reviews', :action => 'show' })
+  # # READ
+  # get('/reviews', { :controller => 'reviews', :action => 'index' })
+  # get('/reviews/:id', { :controller => 'reviews', :action => 'show' })
 
-  # UPDATE
-  get('/reviews/:id/edit', { :controller => 'reviews', :action => 'edit' })
-  get('/update_review/:id', { :controller => 'reviews', :action => 'update' })
+  # # UPDATE
+  # get('/reviews/:id/edit', { :controller => 'reviews', :action => 'edit' })
+  # get('/update_review/:id', { :controller => 'reviews', :action => 'update' })
 
-  # DELETE
-  get('/delete_review/:id', { :controller => 'reviews', :action => 'destroy' })
+  # # DELETE
+  # get('/delete_review/:id', { :controller => 'reviews', :action => 'destroy' })
   #------------------------------
 
   # Routes for the User resource:
