@@ -42,7 +42,8 @@
                 <dt>How is diversity in the office for minorities and women?</dt>
                 <dd><%= review.diversity %></dd>
                 <dt>What is the typical internship offer rate?</dt>
-                <dd><%= review.offer %></dd>
+                <dd><%= review.offer.round(0) * 100 %> %</dd>
+
               </dl>
           </div>
         </div>
