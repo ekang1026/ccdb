@@ -125,8 +125,8 @@ Rails.application.routes.draw do
   # get('/reviews/:id/edit', { :controller => 'reviews', :action => 'edit' })
   # get('/update_review/:id', { :controller => 'reviews', :action => 'update' })
 
-  # # DELETE
-  # get('/delete_review/:id', { :controller => 'reviews', :action => 'destroy' })
+  # DELETE
+  get('/delete_review/:id', { :controller => 'reviews', :action => 'destroy' })
   #------------------------------
 
   # Routes for the User resource:
